@@ -1,0 +1,184 @@
+.checkOut {
+    margin: 2rem 3rem;
+}
+
+.chekCont {
+    display: grid;
+    grid-template-columns: 4fr 1fr;
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.chekForm {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.permanent-radio {
+    color: black;
+}
+
+.permanent-radio input[type="radio"] {
+    accent-color: black;
+}
+
+.permanent-radio label {
+    color: black;
+    font-weight: bold;
+}
+
+.permanent {
+    display: flex;
+    gap: 10px;
+}
+
+.paymentMethod {
+    display: flex;
+    flex-direction: column;
+    background: #F5FAF5;
+    padding: 1rem;
+}
+
+.paymentMethod h3 {
+    margin: 1rem 0;
+}
+
+
+.chekSummaryMain{
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    background: #F5FAF5;
+    padding: 1.5rem 1rem 1rem;
+    height: 350px;
+}
+
+.chekSummary{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.chekSubTotal,
+.chekiscounts,
+.chekelivery,
+.chekotalll,
+.orderSummary{
+    display: flex;
+    justify-content: space-between;
+}
+
+hr{
+    color: #8E8E8E;
+}
+
+.chekSummaryMain button {
+    padding: 0.8rem;
+    border: 2px solid #39BD3B;
+    color: #39BD3B;
+    border-radius: 10px;
+    font-size: 1rem;
+    margin-top: 0.3rem;
+    width: 100%;
+    cursor: pointer;
+}
+
+.chekSummaryMain button:hover {
+    background-color: #39BD3B;
+    transform: scale(1.05);
+    color: #fff;
+}
+
+.goBack{
+    display: none;
+}
+
+.breaddd{
+    padding: 1rem 0;
+}
+
+
+@media screen and (max-width: 1320px) {
+    .chekCont {
+        grid-template-columns: 3fr 1fr;
+    }
+}
+
+@media screen and (max-width: 1174px) {
+    .chekCont {
+        grid-template-columns: 2.5fr 1fr;
+    }
+}
+
+@media screen and (max-width: 1097px) {
+    .chekCont {
+        grid-template-columns: 2fr 1fr;
+    }
+}
+
+@media screen and (max-width: 1077px) {
+    .chekCont {
+        grid-template-columns: 1.5fr 1fr;
+    }
+
+    .chekCont {
+        gap: 1rem;
+    }
+}
+
+@media screen and (max-width: 1050px) {
+    .chekCont {
+        grid-template-columns: 1fr;
+    }
+
+    .goBack{
+        display: flex;
+        flex-direction: row;
+        gap: 1rem;
+        font-weight: 700;
+        margin: 1rem 0;
+        color: 
+        #8E8E8E;
+    }
+
+    .goBackLink{
+        color: 
+        #8E8E8E;
+    }
+
+    .chekSummaryMain{
+        display: none;
+    }
+
+    .breaddd{
+        display: none;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .chekCont {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .breaddcrum {
+        color: #8E8E8E;
+        display: flex;
+        gap: 0.8rem;
+        align-items: center;
+        visibility: visible;
+    }
+
+    .goBack {
+        font-size: 0.8rem;
+    }
+}
+
+
+@media screen and (max-width: 579px) {
+    .checkOut {
+        margin: 2rem;
+    }
+}
+

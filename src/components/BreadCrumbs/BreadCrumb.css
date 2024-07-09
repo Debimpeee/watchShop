@@ -1,0 +1,21 @@
+.breadCrumb{
+    /* margin: 2rem 3rem; */
+    color: #8E8E8E;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.breadCrum{
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+  
+.greyCrumb {
+    color: grey;
+  }
+  
+.blackCrumb {
+    color: black;
+  }
+  

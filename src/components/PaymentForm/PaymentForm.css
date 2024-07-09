@@ -1,0 +1,127 @@
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.breaddcrum {
+  display: none;
+}
+
+.form-group input:focus {
+  outline: none;
+}
+
+.form-groupInside {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.inside {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 34px;
+}
+
+.twoBoxes {
+  display: flex;
+  gap: 34px;
+}
+
+input {
+  background: none;
+  border: 1px solid #C0C0C0;
+  margin-bottom: 0.8rem;
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+label {
+  font-size: 0.9rem;
+}
+
+.payment-form {
+  background: #F5FAF5;
+  padding: 1rem;
+  gap: 1rem;
+}
+
+.payment-form h3 {
+  margin: 1rem 0;
+}
+
+.payment-form button {
+  padding: 1rem 0;
+  width: 100%;
+  border-radius: 8px;
+  margin: 1rem 0;
+  border: none;
+  background-color: #39BD3B;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.payment-form button:hover {
+  background: #0fa311;
+}
+
+@media screen and (max-width: 970px) {
+  .inside {
+      gap: 10px;
+      grid-template-columns: 1fr;
+  }
+
+  .twoBoxes {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+  }
+
+  .paymentMethod h3 {
+      font-size: 1rem;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .inside {
+      gap: 10px;
+      grid-template-columns: 1fr;
+  }
+
+  .twoBoxes {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+  }
+
+  .payment-form {
+      padding: 1rem 0.5rem;
+  }
+
+  .payment-form h3 {
+      font-size: 1.25rem;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .inside {
+      gap: 10px;
+      grid-template-columns: 1fr;
+  }
+
+  .twoBoxes {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+  }
+
+  .payment-form {
+      padding: 1rem 0.5rem;
+  }
+
+  .payment-form h3 {
+      font-size: 1.25rem;
+  }
+}

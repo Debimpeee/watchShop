@@ -1,0 +1,21 @@
+.crumbs{
+    margin: 2rem 3rem;
+    color: #8E8E8E;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.crumb{
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+  
+.grey-crumb {
+    color: grey;
+  }
+  
+.black-crumb {
+    color: black;
+  }
+  
