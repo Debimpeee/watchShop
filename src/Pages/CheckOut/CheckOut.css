@@ -135,14 +135,15 @@ hr{
     .goBack{
         display: flex;
         flex-direction: row;
+        align-items: center;
         gap: 1rem;
         font-weight: 700;
-        margin: 1rem 0;
+        /* margin: 1rem 0; */
         color: 
         #8E8E8E;
     }
 
-    .goBackLink{
+    .backArr{
         color: 
         #8E8E8E;
     }
@@ -172,6 +173,10 @@ hr{
 
     .goBack {
         font-size: 0.8rem;
+    }
+
+    .checkOut {
+        margin: 1.5rem;
     }
 }
 

@@ -12,7 +12,14 @@
     flex-direction: row;
     align-items: center;
     gap: 4rem;
+    flex-wrap: wrap;
 }
+/* .footLink {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 4rem;
+} */
 
 .footLogo img {
     border-right: 1px solid #39BD3B;
@@ -32,6 +39,34 @@
 }
 
 
+@media screen and (max-width: 1300px) {
+    .footLink {
+        gap: 3rem;
+        font-size: 1rem;
+    }
+}
+
+@media screen and (max-width: 1171px) {
+    .footLink {
+        gap: 2rem;
+        font-size: 0.8rem;
+    }
+}
+
+@media screen and (max-width: 1082px) {
+    .footLink {
+        gap: 1.5rem;
+    }
+}
+
+@media screen and (max-width: 922px) {
+    .footLink {
+        display: grid;
+    }
+}
+
+
+/* 
 @media screen and (max-width: 1283px) {
     .footLink {
         gap: 3rem;
@@ -62,4 +97,4 @@
         padding-right: 0;
         padding-bottom: 2rem;
     }
-}
+} */

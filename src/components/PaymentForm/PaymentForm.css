@@ -20,13 +20,13 @@
 
 .inside {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 34px;
+  grid-template-columns: 3fr 1fr;
+  gap: 30px;
 }
 
 .twoBoxes {
   display: flex;
-  gap: 34px;
+  gap: 20px;
 }
 
 input {
@@ -65,6 +65,17 @@ label {
 
 .payment-form button:hover {
   background: #0fa311;
+}
+
+@media screen and (max-width: 1288px) {
+  .inside {
+    grid-template-columns: 4fr 1fr;
+    gap: 20px;
+  }
+  
+  .twoBoxes {
+    gap: 10px;
+  }
 }
 
 @media screen and (max-width: 970px) {

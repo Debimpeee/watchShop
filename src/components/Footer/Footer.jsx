@@ -5,7 +5,6 @@ const Footer = () => {
   return (
     <div className='footer'>
          <hr />
-        {/* <div className="mainFoot"> */}
         <div className="footerCont">
 
         <div className="footLink">

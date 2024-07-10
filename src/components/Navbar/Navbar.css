@@ -134,8 +134,12 @@
 
 @media screen and (max-width: 1000px) {
     .navbar {
-        padding: 0.8rem 2rem;
+        padding: 0.8rem 1rem;
         font-size: 0.9rem;
+    }
+
+    .mobile_btn {
+        margin-right: 1rem;
     }
 }
 
@@ -155,7 +159,7 @@
         right: 1rem;
         cursor: pointer;
         z-index: 10;
-        margin-right: 2rem;
+        /* margin-right: 2rem; */
     }
 
     .navMenu {
@@ -181,10 +185,6 @@
 }
 
 @media screen and (max-width: 460px) {
-    .mobile_btn {
-        margin-right: 1rem;
-    }
-
     .navbar {
         padding: 0.8rem 1rem;
     }

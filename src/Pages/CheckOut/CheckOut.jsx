@@ -49,13 +49,16 @@ const PermanentRadioButton = () => {
       </div>
 
       <div className="goBack">
-        <div className="backArr">
-          <LiaArrowLeftSolid />
-        </div>
-      <Link to="/cart" className="goBackLink">
-        <p className="backk">Go back to Cart</p>
+        
+      <Link to="/cart" className="backArr">
+        <LiaArrowLeftSolid size={25}/>
       </Link>
+
+      <div className="goBackLink" >
+        <p className="backk">Go back to Cart</p>
+      </div>
     </div>
+     
 
       <div className="chekCont">
       

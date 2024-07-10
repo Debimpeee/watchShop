@@ -11,7 +11,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    margin-bottom: 10rem; /* This seems excessive, consider adjusting */
+    margin-bottom: 10rem; 
   }
   
   .cartProduct {
@@ -41,7 +41,7 @@
   }
   
   .productListing .productImage {
-    grid-row: span 3; /* Span across 3 rows */
+    grid-row: span 3; 
   }
   
   .productListing .nameAndPrice {
@@ -148,7 +148,7 @@
   }
   
   .cartProductHeaderTwoo {
-    display: none; /* Initially hide the alternate header */
+    display: none;
   }
   
   /* Media Queries */
@@ -182,17 +182,17 @@
     .productListing {
       grid-template-columns: 1fr;
       gap: 1rem;
-      padding: 1rem; /* Adjust padding for better mobile view */
+      padding: 1rem; 
     }
   }
   
   @media screen and (max-width: 794px) {
     .cartProductHeader {
-      display: none; /* Hide the main header on smaller screens */
+      display: none; 
     }
   
     .cartProductHeaderTwoo {
-      display: flex; /* Display the alternate header */
+      display: flex; 
       align-items: center;
       justify-content: space-between;
       background: #f5faf5;
@@ -201,7 +201,7 @@
     }
   
     .productListing {
-      padding: 1rem; /* Adjust padding for better mobile view */
+      padding: 1rem; 
     }
   
     .cartProduct {
@@ -209,7 +209,7 @@
     }
   
     .orderSummaryMain {
-      padding: 1rem; /* Adjust padding for better mobile view */
+      padding: 1rem; 
     }
   }
   
