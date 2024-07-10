@@ -8,14 +8,14 @@
   display: none;
 }
 
-.form-group input:focus {
-  outline: none;
-}
-
 .form-groupInside {
   display: flex;
   flex-direction: column;
   gap: 0.6rem;
+}
+
+.form-groupInside input:focus {
+  outline: none;
 }
 
 .inside {

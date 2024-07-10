@@ -25,7 +25,7 @@ const Footer = () => {
             <img src="/images/ifooter.jpg" alt="" />
         </div>
 
-        <div>Please Follow Us !</div>
+        <div className="footText">Please Follow Us !</div>
     </div>
     </div>
   )

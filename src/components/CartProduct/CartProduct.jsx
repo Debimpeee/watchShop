@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, {useContext} from 'react';
 import './CartProduct.css';
 import { ShopContext } from '../../context/ShopContext';
 import { FiMinus } from "react-icons/fi";
@@ -39,11 +39,6 @@ const CartProduct = () => {
           <p>Unit</p>
           <p>Total</p>
         </div>
-
-        <div className="cartProductHeaderTwoo">
-          <p>Product Description</p>
-          <p>Total</p>
-        </div>
         
           {data_product.map((product) => {
             if (cartItems[product.id] > 0) {
@@ -54,7 +49,7 @@ const CartProduct = () => {
                     <p>{product.name}</p>
                     <h6>{product.description}</h6>
                   </div>
-                  <p>₦{product.price}K</p>
+                  <p>{product.price}</p>
 
                   <div className="units">
                     <div className='cartAddIcon' onClick={() => decrementQuantity(product.id)}>
@@ -65,7 +60,7 @@ const CartProduct = () => {
                         <GoPlus />
                     </div>
                   </div>
-                  <p>₦{calculateItemTotal(product).toFixed(2)}K</p>
+                  <p>{calculateItemTotal(product).toFixed(2)}</p>
                   {/* <div className='cartRemoveIcon' onClick={() => removeFromCart(product.id)}>
                     <RxCross2 color={"#FF9999"}/>
                   </div> */}
@@ -85,20 +80,20 @@ const CartProduct = () => {
           <hr />
           <div className="subTotal">
             <h5>Subtotal</h5>
-            <h5>₦{calculateCartTotal().toFixed(2)}K</h5>
+            <h5>{calculateCartTotal().toFixed(2)}</h5>
           </div>
           <div className="discounts">
             <h5>Discount (25%)</h5>
-            <h5>₦{getDiscount().toFixed(2)}</h5>
+            <h5>{getDiscount().toFixed(2)}</h5>
           </div>
           <div className="delivery">
             <h5>Delivery Fee</h5>
-            <h5>₦{calculateDeliveryFee().toFixed(2)}</h5>
+            <h5>{calculateDeliveryFee().toFixed(2)}</h5>
           </div>
           <hr />
           <div className="Totalll">
           <h4>Total</h4>
-          <h4>₦{(calculateCartTotal() + calculateDeliveryFee() - getDiscount()).toFixed(2)}K</h4>
+          <h4>{(calculateCartTotal() + calculateDeliveryFee() - getDiscount()).toFixed(2)}</h4>
           </div>
           <Link to="/checkout">
           <button className='chekOut'>CheckOut</button>
