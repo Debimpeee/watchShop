@@ -82,9 +82,13 @@ label {
   .paymentMethod h3 {
       font-size: 1rem;
   }
+
+  .payment-form h3 {
+    margin: 0 0 1rem;
+  }
 }
 
-@media screen and (max-width: 550px) {
+@media screen and (max-width: 585px) {
   .inside {
       gap: 10px;
       grid-template-columns: 1fr;
@@ -105,23 +109,4 @@ label {
   }
 }
 
-@media screen and (max-width: 375px) {
-  .inside {
-      gap: 10px;
-      grid-template-columns: 1fr;
-  }
 
-  .twoBoxes {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 20px;
-  }
-
-  .payment-form {
-      padding: 1rem 0.5rem;
-  }
-
-  .payment-form h3 {
-      font-size: 1.25rem;
-  }
-}

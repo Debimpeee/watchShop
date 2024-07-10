@@ -62,11 +62,11 @@ const PermanentRadioButton = () => {
         <div className="chekForm">
 
             <div className="paymentMethod">
-              {/* <h3>Choose Permanent Payment Method</h3>
+              <h3>Choose Permanent Payment Method</h3>
               <div className="permanent">
                 <PermanentRadioButton />
                 <p className='debit'>Debit card</p>
-              </div> */}
+              </div>
               <div className="carDetails">
               <PaymentForm/>
             </div>

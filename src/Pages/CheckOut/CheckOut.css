@@ -1,12 +1,12 @@
 .checkOut {
-    margin: 2rem 3rem;
+    margin: 1rem 3rem;
 }
 
 .chekCont {
     display: grid;
     grid-template-columns: 4fr 1fr;
     gap: 1.5rem;
-    margin-top: 2rem;
+    margin-top: 1rem;
 }
 
 .chekForm {
@@ -175,10 +175,8 @@ hr{
     }
 }
 
-
-@media screen and (max-width: 579px) {
+@media screen and (max-width:460px) {
     .checkOut {
-        margin: 2rem;
+        margin: 1.5rem 2rem;
     }
 }
-
