@@ -957,15 +957,15 @@ font-size: 0.6rem;
 
 @media screen and (max-width:452px) {
 .itemImage{
-  width: 360px;
+  width: 350px;
 }
 
 .namePrice{
-  width: 360px;
+  width: 350px;
 }
 
 .buyAddContainer {
-  width: 360px;
+  width: 350px;
 }
 
 .namePrice{
