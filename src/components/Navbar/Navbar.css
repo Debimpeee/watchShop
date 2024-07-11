@@ -201,3 +201,9 @@
         margin-right: 3rem;
 }
 }
+
+@media screen and (max-width: 411px) {
+    .navbar {
+        padding: 0.8rem 1.5rem;
+    }
+}

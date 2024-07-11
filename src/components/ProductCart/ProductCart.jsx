@@ -76,11 +76,11 @@ const ProductCart = () => {
 
                                 <div className="units">
                                     <div className='cartAddIcon' onClick={() => decrementQuantity(product.id)}>
-                                        <FiMinus size={19} />
+                                        <FiMinus size={17} />
                                     </div>
                                     <button className='cartItemQty'>{cartItems[product.id]}</button>
                                     <div className='cartRemoveIcon' onClick={() => incrementQuantity(product.id)}>
-                                        <GoPlus size={19} />
+                                        <GoPlus size={17} />
                                     </div>
                                 </div>
 

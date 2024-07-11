@@ -42,8 +42,9 @@
 
   .units{
     display: flex;
-    gap: 1rem;
+    gap: 0.5rem;
     padding-right: 4rem;
+    align-items: center;
   }
 
   .units button{
@@ -55,8 +56,8 @@
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  width: 30px;
-  height: 30px; 
+  width: 20px;
+  height: 20px; 
   border-radius: 50%; 
   border: 1px solid #8e8e8e; 
 }
@@ -66,8 +67,8 @@
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  width: 30px;
-  height: 30px;
+  width: 20px;
+  height: 20px;
   border-radius: 50%; 
   border: 1px solid #8e8e8e; 
 }
@@ -140,7 +141,7 @@
   .cartItemQty {
     padding: 5px;
     background: none;
-    font-size: 16px;
+    font-size: 13px;
     border: none;
     display: flex;
     align-items: center;
@@ -159,6 +160,17 @@
   }
 
   @media screen and (max-width: 800px) {
+    .nameAndesc h5{
+      font-size: 0.7rem;
+    }
+
+    .nameAndesc p {
+      font-size: 0.7rem;
+    }
+
+    .Totalll{
+      font-size: 0.9rem;
+    }
     .cartProductHeader{
         grid-template-columns: 15fr 12fr 1fr;
     }
@@ -175,13 +187,13 @@
 }
 
 .cartRemoveIcon {
-    width: 20px;
-    height: 20px; 
+    width: 15px;
+    height: 15px; 
   }
   
     .cartAddIcon {
-    width: 20px;
-    height: 20px;
+    width: 15px;
+    height: 15px;
   }
 
   .units{
@@ -192,9 +204,9 @@
 
 
   @media screen and (max-width: 588px) {
-     .nameAndesc p {
-        font-size: 0.9rem;
-      }
+     /* .nameAndesc p {
+        font-size: 0.8rem;
+      } */
 
       .cartProductHeader{
         grid-template-columns: 15fr 10fr 1fr;
@@ -220,14 +232,6 @@
         gap: 0.4rem;
     }
 
-    .nameAndesc h6,
-    .nameAndesc h5{
-        font-size: 0.6;
-    }
-    .nameAndesc p{
-        font-size: 0.8;
-    }
-
     .cartProductHeader p{
         font-size: 0.9rem;
     }
@@ -235,11 +239,13 @@
     .productImage {
         height: 50px;
       }
-
   }
 
 
   @media screen and (max-width: 411px) {
+    .productCart{
+      margin: 0 2rem;
+   }
     
     .cartProductHeader{
       grid-template-columns: 15fr 11fr 0.5fr;
@@ -261,7 +267,7 @@
   }
 
   .Totalll{
-    font-size: 0.9rem;
+    font-size: 0.8rem;
   }
 
     .nameAndesc h5{
