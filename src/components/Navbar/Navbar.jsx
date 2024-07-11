@@ -50,9 +50,13 @@ const Navbar = () => {
 
   return (
     <div className='navbar'>
-      <div className="navLogo">
+      {/* <div className="navLogo">
         <img src="/images/Frame8.png" alt="nav logo" />
-      </div>
+      </div> */}
+
+      <Link to="/product" style={{ textDecoration: "none" }} className="navLogo">
+        <img src="/images/Frame8.png" alt="nav logo" />
+      </Link>
 
       <nav>
         <ul className={nav ? 'navMenu active' : 'navMenu'}>
