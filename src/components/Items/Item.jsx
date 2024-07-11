@@ -37,9 +37,7 @@ const Item = ({ product }) => {
         <div className='buyAddContainer'>
           <div className='buyAdd'>
             <button className='buyNow' onClick={handleClick}>Buy Now</button>
-            {/* <button className='addToFavorite'>
-              <MdOutlineFavoriteBorder className='favoriteIcon' /> Add to Favorite
-            </button> */}
+
           </div>
         </div>
       </div>

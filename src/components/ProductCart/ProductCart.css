@@ -1,0 +1,286 @@
+.productCart{
+    display: grid;
+    grid-template-columns: 4fr 1fr;
+    gap: 1.5rem;
+    margin: 0 3rem;
+ }
+ 
+ .seperateCont {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.productListing{
+    display: grid;
+    grid-template-columns: 4.5fr 3.5fr 0.5fr 0.3fr;
+    align-items: center;
+    background: #f5faf5;
+}
+
+.pronamdec{
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.productImage {
+    height: 100px;
+  }
+
+  .nameAndesc{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .nameAndesc h6,
+  .nameAndesc h5{
+    color: #4F4F4F;
+  }
+
+
+  .units{
+    display: flex;
+    gap: 1rem;
+    padding-right: 4rem;
+  }
+
+  .units button{
+    border: none;
+  }
+
+  .cartRemoveIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  width: 30px;
+  height: 30px; 
+  border-radius: 50%; 
+  border: 1px solid #8e8e8e; 
+}
+
+  .cartAddIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%; 
+  border: 1px solid #8e8e8e; 
+}
+
+.cartProductHeader{
+    display: grid;
+    grid-template-columns: 15fr 10fr 1fr;
+    background: #f5faf5;
+    font-weight: 600;
+    font-size: 1rem;
+    padding: 1.3rem 3rem 1.3rem 0.5rem;
+}
+
+.orderSummaryMain {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    background: #f5faf5;
+    padding: 1.5rem 1rem 1rem;
+    height: 350px;
+  }
+  
+  .orderSummary {
+    display: flex;
+    align-items: center;
+  }
+  
+  .subTotal,
+  .discounts,
+  .delivery,
+  .Totalll,
+  .orderSummary {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  hr {
+    color: #8e8e8e;
+  }
+  
+  .orderSummaryMain button {
+    padding: 0.8rem;
+    background: #39bd3b;
+    border: none;
+    color: #fff;
+    border-radius: 10px;
+    font-size: 1rem;
+    margin-top: 0.3rem;
+    width: 100%;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  .orderSummaryMain button:hover {
+    background-color: #0fa311;
+    transform: scale(1.05);
+  }
+  
+  .nameAndesc p {
+    color: #232323;
+    text-align: left;
+  }
+  
+  .cartAddIcon,
+  .cartRemoveIcon {
+    cursor: pointer;
+    margin: 0 5px;
+  }
+  
+  .cartItemQty {
+    padding: 5px;
+    background: none;
+    font-size: 16px;
+    border: none;
+    display: flex;
+    align-items: center;
+  }
+
+
+
+  @media screen and (max-width: 1064px) {
+    .productCart{
+        grid-template-columns: 1fr;
+     }
+
+     .nameAndesc h6 { 
+        display: none; 
+    } 
+  }
+
+  @media screen and (max-width: 800px) {
+    .cartProductHeader{
+        grid-template-columns: 15fr 12fr 1fr;
+    }
+
+    .pronamdec{
+        flex-direction: column;
+        align-items: unset;
+        padding-left: 0.8rem;
+    }
+
+.productListing{
+    grid-template-columns: 4.5fr 4fr 1fr;
+    padding-right: 2rem;
+}
+
+.cartRemoveIcon {
+    width: 20px;
+    height: 20px; 
+  }
+  
+    .cartAddIcon {
+    width: 20px;
+    height: 20px;
+  }
+
+  .units{
+    gap: 0.2rem;
+    align-items: center;
+  }
+  }
+
+
+  @media screen and (max-width: 588px) {
+     .nameAndesc p {
+        font-size: 0.9rem;
+      }
+
+      .cartProductHeader{
+        grid-template-columns: 15fr 10fr 1fr;
+    }
+
+    .productListing{
+        grid-template-columns: 4.5fr 4fr 1fr;
+        padding-right: 2rem;
+    }
+  }
+
+  @media screen and (max-width: 440px) {
+      .cartProductHeader{
+        grid-template-columns: 15fr 9fr 1fr;
+    }
+
+    .productListing{
+        grid-template-columns: 4.5fr 4fr 1fr;
+        padding-right: 2rem;
+    }
+    
+    .nameAndesc{
+        gap: 0.4rem;
+    }
+
+    .nameAndesc h6,
+    .nameAndesc h5{
+        font-size: 0.6;
+    }
+    .nameAndesc p{
+        font-size: 0.8;
+    }
+
+    .cartProductHeader p{
+        font-size: 0.9rem;
+    }
+
+    .productImage {
+        height: 50px;
+      }
+
+  }
+
+
+  @media screen and (max-width: 411px) {
+    
+    .cartProductHeader{
+      grid-template-columns: 15fr 11fr 0.5fr;
+  }
+
+  .productListing{
+    grid-template-columns: 4fr 1fr 1fr;
+}
+
+
+  .cartRemoveIcon {
+    width: 13px;
+    height: 13px; 
+  }
+  
+    .cartAddIcon {
+    width: 13px;
+    height: 13px;
+  }
+
+  .Totalll{
+    font-size: 0.9rem;
+  }
+
+    .nameAndesc h5{
+        font-size: 0.6rem;
+    }
+    .nameAndesc p{
+        font-size: 0.7rem;
+    }
+    .nameAndesc {
+       padding-bottom: 0.3rem;
+    }
+
+    .units{
+        padding-right: 2rem;
+      }
+
+
+  /* .productListing{
+    grid-template-columns: 4.5fr 4fr 1fr;
+} */
+
+}

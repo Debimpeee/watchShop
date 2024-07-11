@@ -33,23 +33,24 @@ const CartProduct = () => {
 
       <div className="seperateCont">
         <div className="cartProductHeader">
-          <p>Product Images</p>
-          <p>Product Description</p>
-          <p>Price</p>
+          <p>Product</p>
           <p>Unit</p>
-          <p>Total</p>
+          <p>Price</p>
         </div>
         
           {data_product.map((product) => {
             if (cartItems[product.id] > 0) {
               return (
                 <div className='productListing' key={product.id}>
-                  <img src={product.image} alt={product.name} className='productImage'/>
-                  <div className="nameAndesc">
-                    <p>{product.name}</p>
-                    <h6>{product.description}</h6>
+                  
+                  <div className="pronamdec">
+                    <div className="image">
+                        <img src={product.image} alt={product.name} className='productImage'/>
+                    </div>
+                    <div className="nameAndesc">
+                      <p>{product.name}</p>
+                      <h6>{product.description}</h6>
                   </div>
-                  <p>{product.price}</p>
 
                   <div className="units">
                     <div className='cartAddIcon' onClick={() => decrementQuantity(product.id)}>
@@ -60,10 +61,24 @@ const CartProduct = () => {
                         <GoPlus />
                     </div>
                   </div>
-                  <p>{calculateItemTotal(product).toFixed(2)}</p>
+
+                  <div className="price">
+                    <p>{product.price}</p>
+                  </div>
+
+                  {/* <div className='cartRemoveIcon'>
+                    <RxCross2 color={"#FF9999"}/>
+                  </div>  */}
                   {/* <div className='cartRemoveIcon' onClick={() => removeFromCart(product.id)}>
                     <RxCross2 color={"#FF9999"}/>
-                  </div> */}
+                  </div>  */}
+                </div>
+                  
+                 
+
+                  
+                  {/* <p>{calculateItemTotal(product).toFixed(2)}</p> */}
+                  
                 </div>
                 
               );
