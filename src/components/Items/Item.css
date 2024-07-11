@@ -938,10 +938,10 @@ font-size: 0.6rem;
 }
 
 @media screen and (max-width:494px) {
-  .main {
+  /* .main {
     display: flex;
     flex-direction: column;
-  }
+  } */
 .itemImage{
   width: 180px;
 }
@@ -956,12 +956,12 @@ font-size: 0.6rem;
 }
 
 @media screen and (max-width:452px) {
-  .namePrice{
+  /* .namePrice{
     flex-direction: column;
     gap: 0.5rem;
     align-items: unset;
   }
- 
+  */
  
 .itemImage{
   width: 345px;
