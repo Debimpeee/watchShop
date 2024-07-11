@@ -4,10 +4,10 @@ import { ShopContext } from '../../context/ShopContext';
 import { FiMinus } from "react-icons/fi";
 import { GoPlus } from "react-icons/go";
 import { Link } from 'react-router-dom';
-import { RxCross2 } from 'react-icons/rx';
+// import { RxCross2 } from 'react-icons/rx';
 
 const ProductCart = () => {
-    const { data_product, cartItems, incrementQuantity, decrementQuantity, getDiscount, removeFromCart } = useContext(ShopContext);
+    const { data_product, cartItems, incrementQuantity, decrementQuantity, getDiscount} = useContext(ShopContext);
 
     const calculateDeliveryFee = () => {
         return 50;
@@ -76,11 +76,11 @@ const ProductCart = () => {
 
                                 <div className="units">
                                     <div className='cartAddIcon' onClick={() => decrementQuantity(product.id)}>
-                                        <FiMinus size={17} />
+                                        <FiMinus size={19} />
                                     </div>
                                     <button className='cartItemQty'>{cartItems[product.id]}</button>
                                     <div className='cartRemoveIcon' onClick={() => incrementQuantity(product.id)}>
-                                        <GoPlus size={17} />
+                                        <GoPlus size={19} />
                                     </div>
                                 </div>
 
