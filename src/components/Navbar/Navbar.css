@@ -1,5 +1,5 @@
 .navLogo img {
-    width: 166px;
+    width: 160px;
     height: 44px;
 }
 
@@ -137,10 +137,6 @@
         padding: 0.8rem 1rem;
         font-size: 0.9rem;
     }
-
-    .mobile_btn {
-        margin-right: 1rem;
-    }
 }
 
 @media screen and (max-width: 930px) {
@@ -159,7 +155,6 @@
         right: 1rem;
         cursor: pointer;
         z-index: 10;
-        /* margin-right: 2rem; */
     }
 
     .navMenu {
@@ -185,10 +180,6 @@
 }
 
 @media screen and (max-width: 460px) {
-    .navbar {
-        padding: 0.8rem 1rem;
-    }
-
     .cartIcon a {
         margin-right: 3rem;
     }
@@ -199,11 +190,6 @@
 
     .cartCount {
         margin-right: 3rem;
-}
-}
-
-@media screen and (max-width: 411px) {
-    .navbar {
-        padding: 0.8rem 1.5rem;
     }
 }
+

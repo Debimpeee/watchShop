@@ -1,0 +1,58 @@
+.shipping-form {
+    display: flex;
+    flex-direction: column;
+    /* max-width: 600px; */
+    margin: 1.5rem 3rem;
+  }
+
+.shipping-form h3{
+    margin: 0 0 2rem;
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  .form-group label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  .form-group input {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+  }
+
+  .shipping-form button {
+    padding: 1rem 0;
+    width: 100%;
+    border-radius: 8px;
+    margin: 1rem 0;
+    border: none;
+    background-color: #39BD3B;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  .shipping-form button:hover {
+    background: #0fa311;
+  }
+
+  
+  @media screen and (max-width: 700px) {
+    .shipping-form {
+      margin: 1rem;
+    }
+
+    .form-group {
+      margin-bottom: 5px;
+    }
+
+    .shipping-form h3{
+      margin: 0.5rem 0 1.5rem;
+      font-size: 1rem;
+    }
+    
+  }

@@ -94,6 +94,7 @@ hr{
     display: none;
 }
 
+
 .breaddd{
     padding: 1rem 0;
 }
@@ -132,18 +133,7 @@ hr{
         grid-template-columns: 1fr;
     }
 
-    .goBack{
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        gap: 1rem;
-        font-weight: 700;
-        /* margin: 1rem 0; */
-        color: 
-        #8E8E8E;
-    }
-
-    .backArr{
+    .back-arrow{
         color: 
         #8E8E8E;
     }
@@ -158,30 +148,44 @@ hr{
 }
 
 @media screen and (max-width: 1000px) {
+    .goBack{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 1rem;
+        font-weight: 700;
+        margin: 1rem 3rem;
+        color: 
+        #8E8E8E;
+        font-size: 0.8rem;
+    }
+
     .chekCont {
         grid-template-columns: 1fr;
         gap: 2rem;
     }
 
-    .breaddcrum {
-        color: #8E8E8E;
-        display: flex;
-        gap: 0.8rem;
-        align-items: center;
-        visibility: visible;
+    .breadcrumbs{
+        display: none;
     }
-
+/* 
     .goBack {
         font-size: 0.8rem;
-    }
+    } */
 
     .checkOut {
         margin: 1.5rem;
     }
 }
 
-@media screen and (max-width:460px) {
-    .checkOut {
-        margin: 1.5rem 2rem;
+@media screen and (max-width: 700px) {
+    .debit{
+        font-size: 0.8rem;
     }
-}
+
+    .goBack{
+        margin: 1rem;
+    }
+
+    
+  }

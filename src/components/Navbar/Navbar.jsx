@@ -83,7 +83,7 @@ const Navbar = () => {
         <div className='cartIcon' ref={cartIconRef}>
           <Link to="/cart"><MdOutlineShoppingCart size={20} /></Link>
         </div>
-        {/* <div className='cartCount'>{getTotalCartItems()}</div> */}
+        <div className='cartCount'>{getTotalCartItems()}</div>
         <div className='user'>
           <button><FaRegUser color={"#08AC0A"} /> Sign Up</button>
         </div>

@@ -1,0 +1,67 @@
+.review-order {
+    display: flex;
+    flex-direction: column;
+    margin: 1rem 3rem;
+  }
+
+.review-order h3{
+    margin: 2rem 0;
+    text-align: left;
+  }
+
+.review-order h4{
+    margin: 1rem 0;
+    text-align: left;
+  }
+
+  .revShipCont{
+    display: flex;
+    flex-direction: row;
+    gap: 3rem;
+  }
+  
+  .shipping-info, .order-summary {
+    margin-bottom: 20px;
+  }
+  
+  .order-item {
+    margin-bottom: 10px;
+  }
+  
+  .review-order button {
+    padding: 1rem 0;
+    width: 100%;
+    border-radius: 8px;
+    margin: 1rem 0;
+    border: none;
+    background-color: #39BD3B;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  .review-order button:hover {
+    background: #0fa311;
+  }
+
+  .order-summary,
+  .shipping-info{
+    line-height: 2rem;
+  }
+  
+
+  @media screen and (max-width: 700px) {
+    .revShipCont{
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .review-order {
+      margin: 1rem;
+    }
+
+    .review-order h3{
+      margin: 1rem 0;
+    }
+  
+  }

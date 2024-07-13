@@ -5,9 +5,10 @@ import { FiMinus } from "react-icons/fi";
 import { GoPlus } from "react-icons/go";
 import { Link } from 'react-router-dom';
 // import { RxCross2 } from 'react-icons/rx';
+import { RiDeleteBin6Line } from "react-icons/ri";
 
 const ProductCart = () => {
-    const { data_product, cartItems, incrementQuantity, decrementQuantity, getDiscount} = useContext(ShopContext);
+    const { data_product, cartItems, incrementQuantity, decrementQuantity, getDiscount, removeFromCart} = useContext(ShopContext);
 
     const calculateDeliveryFee = () => {
         return 50;
@@ -49,11 +50,9 @@ const ProductCart = () => {
         <div className='productCart'>
 
             <div className="seperateCont">
-                <div className="cartProductHeader">
-                    <p>Product</p>
-                    <p>Unit</p>
-                    <p>Total</p>
-                </div>
+                {/* <div className="cartProductHeader">
+                    <p>Your Order</p>
+                </div> */}
 
                 {data_product.map((product) => {
                     if (cartItems[product.id] > 0) {
@@ -66,21 +65,16 @@ const ProductCart = () => {
                                     </div>
                                     <div className="nameAndesc">
                                         <p>{product.name}</p>
-                                        <h6>{product.description}</h6>
-
-                                        <div className="priceTag">
-                                            <h5>{product.price}</h5>
+                                        <h5>{product.price}</h5>
+                                        <div className="units">
+                                            <div className='cartAddIcon' onClick={() => decrementQuantity(product.id)}>
+                                                <FiMinus size={12} color='#8E8E8E'/>
+                                            </div>
+                                        <button className='cartItemQty'>{cartItems[product.id]}</button>
+                                            <div className='cartRemoveIcon' onClick={() => incrementQuantity(product.id)}>
+                                                <GoPlus size={12} color='#8E8E8E'/>
+                                            </div>
                                         </div>
-                                    </div>
-                                </div>
-
-                                <div className="units">
-                                    <div className='cartAddIcon' onClick={() => decrementQuantity(product.id)}>
-                                        <FiMinus size={19} />
-                                    </div>
-                                    <button className='cartItemQty'>{cartItems[product.id]}</button>
-                                    <div className='cartRemoveIcon' onClick={() => incrementQuantity(product.id)}>
-                                        <GoPlus size={19} />
                                     </div>
                                 </div>
 
@@ -88,9 +82,9 @@ const ProductCart = () => {
                                     <h4>{formatCurrency(calculateItemTotal(product))}</h4>
                                 </div>
 
-                                {/* <div className='cartDeleteIcon' onClick={() => removeFromCart(product.id)}>
-                                    <RxCross2 color={"#FF9999"}/>
-                                </div>  */}
+                                <div className='cartDeleteIcon' onClick={() => removeFromCart(product.id)}>
+                                    <RiDeleteBin6Line color={"#FF9999"}/>
+                                </div> 
 
                             </div>
                         );
@@ -118,7 +112,7 @@ const ProductCart = () => {
                     <h5>{formatCurrency(deliveryFee)}</h5>
                 </div>
                 <hr />
-                <div className="Totalll">
+                <div className="Totallll">
                     <h4>Total</h4>
                     <h4>{formatCurrency(total)}</h4>
                 </div>

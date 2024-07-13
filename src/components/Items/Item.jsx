@@ -1,32 +1,32 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import './Item.css';
-// import { MdOutlineFavoriteBorder } from 'react-icons/md';
 import { ShopContext } from '../../context/ShopContext';
+import Modal from '../../components/Modal/Modal';
 
 const Item = ({ product }) => {
   const { addToCart } = useContext(ShopContext);
-  const { image, name, price, description, id } = product;
+  const { image, name, price, description, details, id } = product;
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
-  const handleClick = () => {
+  const handleAddToCart = () => {
     addToCart(id);
-    scrollToTop(); 
+    closeModal(); // Close the modal after adding to cart
   };
 
-  const scrollToTop = () => {
-    const scrollStep = -window.scrollY / (500 / 15); 
-    const scrollInterval = setInterval(() => {
-      if (window.scrollY !== 0) {
-        window.scrollBy(0, scrollStep);
-      } else {
-        clearInterval(scrollInterval);
-      }
-    }, 15);
+  const handleViewProduct = () => {
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
   };
 
   return (
     <div className='item'>
       <div className='main'>
-        <img src={image} alt={name} className='itemImage' />
+        <div className='imageContainer'>
+          <img src={image} alt={name} className='itemImage' onClick={handleViewProduct} />
+        </div>
         <div className='namePrice'>
           <p className='propName'>{name}</p>
           <p className='propPrice'>{price}</p>
@@ -34,13 +34,21 @@ const Item = ({ product }) => {
         <div className='nameDesc'>
           <span>{description}</span>
         </div>
-        <div className='buyAddContainer'>
-          <div className='buyAdd'>
-            <button className='buyNow' onClick={handleClick}>Buy Now</button>
-
-          </div>
+        <div className='buyAdd'>
+          <button onClick={handleViewProduct}>View Product</button>
         </div>
       </div>
+      {isModalOpen && (
+        <Modal onClose={closeModal}>
+          <div className='modalContent'>
+            <img src={image} alt={name} className='modalImage' />
+            <h2>{name}</h2>
+            <p>{details}</p>
+            <p className='modalPrice'>{price}</p>
+            <button className='modalAddToCart' onClick={handleAddToCart}>Add To Cart</button>
+          </div>
+        </Modal>
+      )}
     </div>
   );
 };

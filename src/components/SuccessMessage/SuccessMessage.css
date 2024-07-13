@@ -1,0 +1,34 @@
+.success-message {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    text-align: center;
+  }
+  
+  .details {
+    margin-bottom: 15px;
+  }
+  
+  .details h4 {
+    margin-bottom: 10px;
+  }
+  
+  .details button {
+    padding: 10px 20px;
+    background-color: #39BD3B;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease; 
+    border-radius: 10px;
+  }
+
+  .details button:hover {
+    background-color: #0fa311;
+    transform: scale(1.05);
+  }
+  
+  
