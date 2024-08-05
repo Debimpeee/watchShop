@@ -6,7 +6,7 @@ import { ShopContext } from '../../context/ShopContext';
 const Product = () => {
   const { data_product } = useContext(ShopContext);
   const [currentPage, setCurrentPage] = useState(1);
-  const productsPerPage = 10;
+  const productsPerPage = 12;
 
   // Calculate the index of the first and last product to display on the current page
   const indexOfLastProduct = currentPage * productsPerPage;

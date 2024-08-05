@@ -70,17 +70,15 @@
 
 .cartIcon {
     display: flex;
+    flex-direction: row;
     align-items: center;
-    position: relative;
-}
-
-.search,
-.cartIcon a {
-    display: flex;
-    align-items: center;
+    gap: 5px;
     background: #fff;
     border-radius: 5px;
-    padding: 10px 12px;
+    padding: 6px 10px;
+}
+
+.cartIcon a {
     color: #000;
 }
 
@@ -110,8 +108,6 @@
     font-weight: 600;
     position: absolute;
     z-index: 1;
-    margin-right: -1rem;
-    margin-bottom: 2rem;
   }
   
 
@@ -142,12 +138,7 @@
 @media screen and (max-width: 930px) {
     .user {
         display: none;
-    }
-
-    .cartIcon a {
-        background: none;
-        margin-right: 3rem;
-    }
+    }  
 
     .mobile_btn {
         display: block;
@@ -160,8 +151,9 @@
     .navMenu {
         display: flex;
         flex-direction: column;
-        justify-content: center;
+        justify-content: center; 
         align-items: center;
+        gap: 4rem;
         position: fixed;
         left: -100%;
         right: 0;
@@ -177,19 +169,15 @@
     .active {
         left: 0;
     }
+
+    .navIcon {
+        margin-right: 2rem;
+    }
 }
 
 @media screen and (max-width: 460px) {
-    .cartIcon a {
-        margin-right: 3rem;
-    }
-
     .navMenu li a {
         font-size: 1.2rem;
-    }
-
-    .cartCount {
-        margin-right: 3rem;
     }
 }
 

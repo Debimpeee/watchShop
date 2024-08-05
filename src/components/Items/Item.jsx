@@ -25,7 +25,7 @@ const Item = ({ product }) => {
     <div className='item'>
       <div className='main'>
         <div className='imageContainer'>
-          <img src={image} alt={name} className='itemImage' onClick={handleViewProduct} />
+          <img src={image} alt={name} className='itemImage' onClick={handleAddToCart} />
         </div>
         <div className='namePrice'>
           <p className='propName'>{name}</p>

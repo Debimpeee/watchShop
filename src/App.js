@@ -11,12 +11,9 @@ function App() {
   return (
     <div>
       <BrowserRouter>
-
         <Navbar/>
-
         <Routes>
-
-          {/* <Route path="/" element={<Navigate to="/product" replace />} /> */}
+          <Route path="/" element={<Navigate to="/product" replace />} />
           <Route path="/product" element={<Product/>}>
             <Route path=':productId' element={<Product/>}/>
           </Route>

@@ -7,6 +7,7 @@ import ShippingForm from '../../components/ShippingForm/ShippingForm';
 import ReviewOrder from '../../components/ReviewOrder/ReviewOrder';
 import PaymentForm from '../../components/PaymentForm/PaymentForm';
 import SuccessMessage from '../../components/SuccessMessage/SuccessMessage';
+import ContactForm from '../../components/ContactForm/ContactForm';
 import { LiaArrowLeftSolid } from 'react-icons/lia';
 
 const CheckOut = () => {
@@ -69,13 +70,19 @@ const CheckOut = () => {
         <p className="back-link">Go back to Cart</p>
       </div>
       <div className="checkout-content">
-        <div className="shipping-info">
-          {step === 1 && <ShippingForm onContinue={handleShippingContinue} />}
+        {step === 1 && (
+          <div className="shipping-info">
+            <ContactForm/>
+            <ShippingForm onContinue={handleShippingContinue}/> 
+            {/* <ShippingForm onContinue={handleShippingContinue}/>  */}
+          </div>
+        )}
+          
           {step === 2 && (
             <ReviewOrder
               cartItems={cartItems}
               data_product={data_product}
-              shippingData={shippingData}
+              // shippingData={shippingData}
               onConfirm={handleOrderConfirm}
             />
           )}
@@ -93,7 +100,6 @@ const CheckOut = () => {
           )}
         </div>
       </div>
-    </div>
   );
 };
 

@@ -18,7 +18,7 @@ const Navbar = () => {
   };
 
   const handleMenuClick = (path) => {
-    setNav(false);  // Close the toggle menu
+    setNav(false); 
     navigate(path);
   };
 
@@ -26,7 +26,6 @@ const Navbar = () => {
     setNav(!nav);
   };
 
-  // Calculate cartCount position dynamically
   useEffect(() => {
     const updateCartCountPosition = () => {
       const cartIconElement = cartIconRef.current;
@@ -50,10 +49,6 @@ const Navbar = () => {
 
   return (
     <div className='navbar'>
-      {/* <div className="navLogo">
-        <img src="/images/Frame8.png" alt="nav logo" />
-      </div> */}
-
       <Link to="/product" style={{ textDecoration: "none" }} className="navLogo">
         <img src="/images/Frame8.png" alt="nav logo" />
       </Link>
@@ -61,29 +56,29 @@ const Navbar = () => {
       <nav>
         <ul className={nav ? 'navMenu active' : 'navMenu'}>
           <li onClick={() => setMenu("home")} className={getMenuClass("home")}>
-            <Link to="/" style={{ textDecoration: "none" }} onClick={() => handleMenuClick("/")}>Home</Link>
+            <Link style={{ textDecoration: "none" }}>Home</Link>
           </li>
-          <li onClick={() => setMenu("product")} className={getMenuClass("product")}>
+          <li active onClick={() => setMenu("product")} className={getMenuClass("product")}>
             <Link to="/product" style={{ textDecoration: "none" }} onClick={() => handleMenuClick("/product")}>Products</Link>
           </li>
           <li onClick={() => setMenu("about")} className={getMenuClass("about")}>
-            <Link to="/about" style={{ textDecoration: "none" }} onClick={() => handleMenuClick("/about")}>About Us</Link>
+            <Link style={{ textDecoration: "none" }}>About Us</Link>
           </li>
           <li onClick={() => setMenu("contact")} className={getMenuClass("contact")}>
-            <Link to="/contact" style={{ textDecoration: "none" }} onClick={() => handleMenuClick("/contact")}>Contact Us</Link>
+            <Link style={{ textDecoration: "none" }}>Contact Us</Link>
           </li>
         </ul>
       </nav>
 
       <div onClick={toggleNav} className="mobile_btn">
-        {nav ? <AiOutlineClose size={25} /> : <AiOutlineMenu size={20} />}
+        {nav ? <AiOutlineClose size={25}/> : <AiOutlineMenu size={20} />}
       </div>
 
       <div className="navIcon">
         <div className='cartIcon' ref={cartIconRef}>
+          <div className='cartCount'>{getTotalCartItems()}</div>
           <Link to="/cart"><MdOutlineShoppingCart size={20} /></Link>
         </div>
-        <div className='cartCount'>{getTotalCartItems()}</div>
         <div className='user'>
           <button><FaRegUser color={"#08AC0A"} /> Sign Up</button>
         </div>
@@ -93,3 +88,32 @@ const Navbar = () => {
 }
 
 export default Navbar;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
