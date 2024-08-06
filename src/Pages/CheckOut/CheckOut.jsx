@@ -7,13 +7,14 @@ import ShippingForm from '../../components/ShippingForm/ShippingForm';
 import ReviewOrder from '../../components/ReviewOrder/ReviewOrder';
 import PaymentForm from '../../components/PaymentForm/PaymentForm';
 import SuccessMessage from '../../components/SuccessMessage/SuccessMessage';
-import ContactForm from '../../components/ContactForm/ContactForm';
+// import ContactForm from '../../components/ContactForm/ContactForm';
 import { LiaArrowLeftSolid } from 'react-icons/lia';
 
 const CheckOut = () => {
   const { data_product, cartItems, getDiscount } = useContext(ShopContext);
   const [step, setStep] = useState(1);
   const [shippingData, setShippingData] = useState(null);
+  const [contactData, setContactData] = useState(null);
   const [paymentData, setPaymentData] = useState(null);
 
   const calculateDeliveryFee = () => {
@@ -40,6 +41,7 @@ const CheckOut = () => {
 
   const handleShippingContinue = (data) => {
     setShippingData(data);
+    setContactData(data);
     setStep(2);
   };
 
@@ -55,6 +57,7 @@ const CheckOut = () => {
   const resetCheckout = () => {
     setStep(1);
     setShippingData(null);
+    setContactData(null);
     setPaymentData(null);
   };
 
@@ -72,7 +75,7 @@ const CheckOut = () => {
       <div className="checkout-content">
         {step === 1 && (
           <div className="shipping-info">
-            <ContactForm/>
+            {/* <ContactForm/> */}
             <ShippingForm onContinue={handleShippingContinue}/> 
             {/* <ShippingForm onContinue={handleShippingContinue}/>  */}
           </div>
@@ -82,7 +85,8 @@ const CheckOut = () => {
             <ReviewOrder
               cartItems={cartItems}
               data_product={data_product}
-              // shippingData={shippingData}
+              shippingData={shippingData}
+              contactData={contactData}
               onConfirm={handleOrderConfirm}
             />
           )}
@@ -94,6 +98,7 @@ const CheckOut = () => {
           {step === 4 && (
             <SuccessMessage
               shippingData={shippingData}
+              contactData={contactData}
               paymentData={paymentData}
               onReset={resetCheckout}
             />

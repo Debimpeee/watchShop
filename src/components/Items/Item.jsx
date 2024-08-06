@@ -25,7 +25,8 @@ const Item = ({ product }) => {
     <div className='item'>
       <div className='main'>
         <div className='imageContainer'>
-          <img src={image} alt={name} className='itemImage' onClick={handleAddToCart} />
+          <img src={image} alt={name} className='itemImage'/>
+          {/* <img src={image} alt={name} className='itemImage' onClick={handleAddToCart} /> */}
         </div>
         <div className='namePrice'>
           <p className='propName'>{name}</p>
@@ -35,7 +36,7 @@ const Item = ({ product }) => {
           <span>{description}</span>
         </div>
         <div className='buyAdd'>
-          <button onClick={handleViewProduct}>View Product</button>
+          <button onClick={handleViewProduct}>Quick Buy</button>
         </div>
       </div>
       {isModalOpen && (

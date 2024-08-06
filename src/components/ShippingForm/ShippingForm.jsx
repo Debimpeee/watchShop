@@ -3,8 +3,11 @@ import './ShippingForm.css';
 
 const ShippingForm = ({ onContinue }) => {
   const [shippingData, setShippingData] = useState({
-    // name: '',
+    firstName: '',
+    lastName: '',
     address: '',
+    email: '',
+    phoneNumber: '',
     city: '',
     state: '',
     zip: '',
@@ -24,6 +27,29 @@ const ShippingForm = ({ onContinue }) => {
   return (
     <form className="shipping-form" onSubmit={handleSubmit}>
       <h3>Shipping Information</h3>
+
+      <div className="formmGroup">
+        <div className="firstName">
+          <label htmlFor="name">First Name</label>
+          <input 
+          type="text"
+          id='firstName'
+          name='firstName'
+          value={shippingData.firstName}
+          onChange={handleChange}
+          required />
+        </div>
+        <div className="lastName">
+          <label htmlFor="name">Last Name</label>
+            <input 
+            type="text"
+            id='lastName'
+            name='lastName'
+            value={shippingData.lastName}
+            onChange={handleChange}
+            required />
+        </div>
+      </div>
 
       <div className="forrm-group">
         <label htmlFor="address">Address</label>
@@ -61,6 +87,45 @@ const ShippingForm = ({ onContinue }) => {
             />
           </div>
       </div>
+
+      <div className="formmm-group">
+        <div className="email">
+            <label htmlFor="email">Email</label>
+              <input 
+              type="email"
+              id='email'
+              name='email'
+              value={shippingData.email}
+              onChange={handleChange}
+              required />
+        </div>
+
+        <div className="phone-group">
+          <label htmlFor="text">Phone Number</label>
+          <div className="form-sub">
+            <div className="dropDown">
+                {/* <FaChevronDown/> */}
+                <input 
+                type="text"
+                id='phoneNumber'
+                name='phoneNumber'
+                value={shippingData.phoneNumber}
+                onChange={handleChange}
+                required />
+            </div>
+            <div className="dropDownNum">
+              <input 
+              type="text"
+              id='phoneNumber'
+              name='phoneNumber'
+              value={shippingData.phoneNumber}
+              onChange={handleChange}
+              required />
+            </div>  
+          </div>
+        </div>
+      </div>
+
     
       <div className="form-grouup">
         <div className="country">
