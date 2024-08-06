@@ -102,7 +102,7 @@ hr{
 .shipping-info{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    margin: 2rem 3rem;
+    /* margin: 2rem 3rem; */
     gap: 3rem;
 }
 

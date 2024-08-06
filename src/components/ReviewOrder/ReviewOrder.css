@@ -14,18 +14,36 @@
     text-align: left;
   }
 
+.order-item img{
+    height: 60px;
+    border-radius: 8px;
+  }
+
   .revShipCont{
     display: flex;
-    flex-direction: row;
-    gap: 3rem;
+    /* margin: 1rem 3rem; */
+    /* flex-direction: row;
+    gap: 3rem; */
   }
+/* 
+  .order-summary{
+
+  } */
   
-  .shipping-info, .order-summary {
+  .shipping-info {
     margin-bottom: 20px;
   }
   
   .order-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
     margin-bottom: 10px;
+  }
+
+  .totalh {
+    display: flex;
+    justify-content: space-between;
   }
   
   .review-order button {

@@ -34,11 +34,16 @@ const ReviewOrder = ({ cartItems, data_product, shippingData, onConfirm }) => {
           {data_product.map((product) => (
             cartItems[product.id] > 0 && (
               <div key={product.id} className="order-item">
-                <p>{product.name} - {cartItems[product.id]} x {product.price}</p>
+                <img src={product.image} alt={product.name} className='productImage' />
+                <p>{product.name}</p>
+                <p>{cartItems[product.id]} x {product.price}</p>
               </div>
             )
           ))}
-          <h4>Total: ₦{total.toFixed(2)}</h4>
+          <div className="totalh">
+            <h4>Total</h4>
+            <h4>₦{total.toFixed(2)}</h4>
+          </div>
           <button onClick={onConfirm}>Confirm Order</button>
         </div>
         
