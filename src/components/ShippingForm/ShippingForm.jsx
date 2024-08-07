@@ -1,17 +1,18 @@
 import React, { useState } from 'react';
 import './ShippingForm.css';
 
-const ShippingForm = ({ onContinue }) => {
+// const ShippingForm = ({ onContinue }) => {
+const ShippingForm = () => {
   const [shippingData, setShippingData] = useState({
+    country: '',
     firstName: '',
     lastName: '',
     address: '',
     email: '',
-    phoneNumber: '',
     city: '',
     state: '',
     zip: '',
-    country: '',
+    phone: ''
   });
 
   const handleChange = (e) => {
@@ -19,17 +20,93 @@ const ShippingForm = ({ onContinue }) => {
     setShippingData({ ...shippingData, [name]: value });
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    onContinue(shippingData);
-  };
+  // const handleSubmit = (e) => {
+  //   e.preventDefault();
+  //   onContinue(shippingData);
+  // };
 
   return (
-    <form className="shipping-form" onSubmit={handleSubmit}>
+    // <form className="shipping-form" onSubmit={handleSubmit}>
+    <form className="shipping-form">
       <h3>Shipping Information</h3>
 
       <div className="formmGroup">
-        <div className="firstName">
+
+        <div className="formmm">
+          {/* <label htmlFor="country">Country</label> */}
+          <input
+            type="text"
+            id="country"
+            name="country"
+            value={shippingData.country}
+            onChange={handleChange}
+            placeholder='Country/Region'
+            required
+          />
+        </div>
+        <div className="firstLast">
+          <div className="firstName">
+            {/* <label htmlFor="name">First Name</label> */}
+            <input 
+            type="text"
+            id='firstName'
+            name='firstName'
+            value={shippingData.firstName}
+            onChange={handleChange}
+            placeholder='First Name'
+            required />
+          </div>
+          <div className="lastName">
+            {/* <label htmlFor="name">Last Name</label> */}
+            <input 
+            type="text"
+            id='lastName'
+            name='lastName'
+            value={shippingData.lastName}
+            onChange={handleChange}
+            placeholder='Last Name'
+            required />
+          </div>
+        </div>
+        <div className="forrm-group">
+          {/* <label htmlFor="address">Address</label> */}
+          <input
+            type="text"
+            id="address"
+            name="address"
+            value={shippingData.address}
+            onChange={handleChange}
+            placeholder='Address'
+            required
+          />
+      </div>
+      <div className="form-groupp">
+          <div className="city">
+            {/* <label htmlFor="city">City</label> */}
+            <input
+              type="text"
+              id="city"
+              name="city"
+              value={shippingData.city}
+              onChange={handleChange}
+              placeholder='City'
+              required
+            />
+          </div>
+          <div className="state">
+            {/* <label htmlFor="state">State/Province</label> */}
+            <input
+              type="text"
+              id="state"
+              name="state"
+              value={shippingData.state}
+              onChange={handleChange}
+              placeholder='State/Province'
+              required
+            />
+          </div> 
+      </div>
+        {/* <div className="firstName">
           <label htmlFor="name">First Name</label>
           <input 
           type="text"
@@ -103,9 +180,9 @@ const ShippingForm = ({ onContinue }) => {
         <div className="phone-group">
           <label htmlFor="text">Phone Number</label>
           <div className="form-sub">
-            <div className="dropDown">
+            <div className="dropDown"> */}
                 {/* <FaChevronDown/> */}
-                <input 
+                {/* <input 
                 type="text"
                 id='phoneNumber'
                 name='phoneNumber'
@@ -150,9 +227,9 @@ const ShippingForm = ({ onContinue }) => {
               onChange={handleChange}
               required
             />
-        </div>
+        </div> */}
       </div>
-      <button type="submit" className="shipping-btn">Continue to Payment</button>
+      {/* <button type="submit" className="shipping-btn">Continue to Payment</button> */}
     </form>
   );
 };

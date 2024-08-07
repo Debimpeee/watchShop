@@ -2,13 +2,6 @@
     margin: 1rem 3rem;
 }
 
-.chekCont {
-    display: grid;
-    grid-template-columns: 4fr 1fr;
-    gap: 1.5rem;
-    margin-top: 1rem;
-}
-
 .chekForm {
     display: flex;
     flex-direction: column;
@@ -43,7 +36,6 @@
 .paymentMethod h3 {
     margin: 1rem 0;
 }
-
 
 .chekSummaryMain{
     display: flex;
@@ -102,43 +94,16 @@ hr{
 .shipping-info{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    /* margin: 2rem 3rem; */
     gap: 3rem;
 }
 
-@media screen and (max-width: 1320px) {
-    .chekCont {
-        grid-template-columns: 3fr 1fr;
-    }
-}
-
-@media screen and (max-width: 1174px) {
-    .chekCont {
-        grid-template-columns: 2.5fr 1fr;
-    }
-}
-
-@media screen and (max-width: 1097px) {
-    .chekCont {
-        grid-template-columns: 2fr 1fr;
-    }
-}
-
-@media screen and (max-width: 1077px) {
-    .chekCont {
-        grid-template-columns: 1.5fr 1fr;
-    }
-
-    .chekCont {
+@media screen and (max-width: 1158px) {
+    .shipping-info{
         gap: 1rem;
     }
 }
 
 @media screen and (max-width: 1050px) {
-    .chekCont {
-        grid-template-columns: 1fr;
-    }
-
     .back-arrow{
         color: 
         #8E8E8E;
@@ -166,18 +131,9 @@ hr{
         font-size: 0.8rem;
     }
 
-    .chekCont {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-    }
-
     .breadcrumbs{
         display: none;
     }
-/* 
-    .goBack {
-        font-size: 0.8rem;
-    } */
 
     .checkOut {
         margin: 1.5rem;
@@ -192,6 +148,4 @@ hr{
     .goBack{
         margin: 1rem;
     }
-
-    
   }

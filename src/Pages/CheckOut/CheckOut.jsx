@@ -39,25 +39,26 @@ const CheckOut = () => {
 
   const { subtotal, total } = calculateCartTotal();
 
-  const handleShippingContinue = (data) => {
-    setShippingData(data);
-    setContactData(data);
-    setStep(2);
-  };
+  // const handleShippingContinue = (data) => {
+  //   setShippingData(data);
+  //   // setContactData(data);
+  //   setStep(2);
+  // };
 
-  const handleOrderConfirm = () => {
-    setStep(3);
+  const handleOrderConfirm = (data) => {
+    setShippingData(data);
+    setStep(2);
   };
 
   const handlePaymentSubmit = (data) => {
     setPaymentData(data);
-    setStep(4);
+    setStep(3);
   };
 
   const resetCheckout = () => {
     setStep(1);
     setShippingData(null);
-    setContactData(null);
+    // setContactData(null);
     setPaymentData(null);
   };
 
@@ -76,12 +77,7 @@ const CheckOut = () => {
         {step === 1 && (
           <div className="shipping-info">
             {/* <ContactForm/> */}
-            <ShippingForm onContinue={handleShippingContinue}/> 
-            {/* <ShippingForm onContinue={handleShippingContinue}/>  */}
-          </div>
-        )}
-          
-          {step === 2 && (
+            <ShippingForm/> 
             <ReviewOrder
               cartItems={cartItems}
               data_product={data_product}
@@ -89,7 +85,13 @@ const CheckOut = () => {
               contactData={contactData}
               onConfirm={handleOrderConfirm}
             />
-          )}
+            {/* <ShippingForm onContinue={handleShippingContinue}/>  */}
+          </div>
+        )}
+          
+          {/* {step === 2 && (
+            
+          )} */}
         </div>
 
         {/* Payment Form and Success Message */}

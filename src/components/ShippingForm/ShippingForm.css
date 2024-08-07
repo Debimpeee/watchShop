@@ -1,105 +1,67 @@
 .shipping-form{
   display: flex;
+  flex-direction: column;
+  margin: 1rem 1rem 1rem 3rem;
 }
 
-/* .shipping-form{
+.formmGroup{
   display: flex;
   flex-direction: column;
+  gap: 1rem;
+}
+
+.shipping-form h3{
+  margin: 1rem 0;
 }
 
 .shipping-form input{
   width: 100%;
-  padding: 10px;
+  padding: 13px;
+}
+
+.firstLast{
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+.lastName,
+.firstName{
+  width: 50%;
 }
 
 .form-groupp{
   display: flex;
-  gap: 1rem;
+  flex-direction: row;
+  gap: 10px;
 }
 
-.city, 
-.zip,
-.country,
+.city,
 .state{
   width: 50%;
 }
 
-.form-grouup{
-  display: flex;
-  flex-direction: row;
-  gap: 1rem;
+.order-summary .divider {
+  content: "";
+  position: relative;
+  width: 100%;
+  height: 2px;
+  background-color: #C0C0C0;
+  transform-origin: right;
 }
 
-.shipping-form button {
-  padding: 11px 0;
-  width: 100%;
-  border-radius: 8px;
-  margin: 1rem 0;
-  border: none;
-  background-color: #39BD3B;
-  color: #fff;
-  cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.2s ease;
+/* 
+@media screen and (max-width: 1158px) {
+  .shipping-form{
+    margin: 1rem;
+  }
 } */
 
-/* .state{
-  width: 50%;
-} */
 
-/* .shipping-form {
-    display: flex;
-    flex-direction: column;
-    margin: 1.5rem 3rem;
-  }
 
-.shipping-form h3{
-    margin: 0 0 2rem;
-  }
-  
-  .form-group {
-    margin-bottom: 15px;
-  }
-  
-  .form-group label {
-    display: block;
-    margin-bottom: 5px;
-  }
-  
-  .form-group input {
-    width: 100%;
-    padding: 10px;
-    box-sizing: border-box;
-  }
 
-  .shipping-form button {
-    padding: 1rem 0;
-    width: 100%;
-    border-radius: 8px;
-    margin: 1rem 0;
-    border: none;
-    background-color: #39BD3B;
-    color: #fff;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-  }
-  
-  .shipping-form button:hover {
-    background: #0fa311;
-  }
 
-  
-  @media screen and (max-width: 700px) {
-    .shipping-form {
-      margin: 1rem;
-    }
 
-    .form-group {
-      margin-bottom: 5px;
-    }
 
-    .shipping-form h3{
-      margin: 0.5rem 0 1.5rem;
-      font-size: 1rem;
-    }
-    
-  } */
+
+

@@ -2,10 +2,13 @@
     display: flex;
     flex-direction: column;
     margin: 1rem 3rem;
+    padding: 1rem;
+    background-color: #f5faf5;
+    border-radius: 10px;
   }
 
 .review-order h3{
-    margin: 2rem 0;
+    margin: 1rem 0;
     text-align: left;
   }
 
@@ -21,14 +24,7 @@
 
   .revShipCont{
     display: flex;
-    /* margin: 1rem 3rem; */
-    /* flex-direction: row;
-    gap: 3rem; */
   }
-/* 
-  .order-summary{
-
-  } */
   
   .shipping-info {
     margin-bottom: 20px;
@@ -37,8 +33,14 @@
   .order-item {
     display: flex;
     align-items: center;
-    gap: 1rem;
+    justify-content: space-between;
     margin-bottom: 10px;
+  }
+
+  .imgName{
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
   }
 
   .totalh {
@@ -47,7 +49,8 @@
   }
   
   .review-order button {
-    padding: 1rem 0;
+    padding: 13px 0;
+    font-size: 1rem;
     width: 100%;
     border-radius: 8px;
     margin: 1rem 0;
@@ -62,24 +65,18 @@
     background: #0fa311;
   }
 
-  .order-summary,
-  .shipping-info{
+  .order-summary{
     line-height: 2rem;
+    padding: 1rem;
   }
   
 
-  @media screen and (max-width: 700px) {
-    .revShipCont{
-      flex-direction: column;
-      gap: 1rem;
-    }
-
+ @media screen and (max-width: 1158px) {
     .review-order {
-      margin: 1rem;
+      margin-left: 1rem;
     }
 
-    .review-order h3{
+    /* .review-order h3{
       margin: 1rem 0;
-    }
-  
+    } */
   }
