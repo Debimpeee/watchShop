@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './ShippingForm.css';
 
 // const ShippingForm = ({ onContinue }) => {
-const ShippingForm = () => {
+const ShippingForm = ({onShippingDataChange}) => {
   const [shippingData, setShippingData] = useState({
     country: '',
     firstName: '',
@@ -11,6 +11,10 @@ const ShippingForm = () => {
     city: '',
     state: ''
   });
+
+  useEffect(()=>{
+    onShippingDataChange(shippingData)
+  }, [shippingData])
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -103,3 +107,5 @@ const ShippingForm = () => {
 };
 
 export default ShippingForm;
+
+

@@ -13,7 +13,6 @@ const CheckOut = () => {
   const { data_product, cartItems, getDiscount } = useContext(ShopContext);
   const [step, setStep] = useState(1);
   const [shippingData, setShippingData] = useState(null);
-  const [contactData, setContactData] = useState(null);
   const [paymentData, setPaymentData] = useState(null);
 
   const calculateDeliveryFee = () => {
@@ -38,10 +37,17 @@ const CheckOut = () => {
 
   const { subtotal, total } = calculateCartTotal();
 
-  const handleOrderConfirm = (data) => {
-    setShippingData(data);
+  const handleOrderConfirm = () => {
+    if(Object.values(shippingData).some(value => value === '')){
+      alert("Please fill in your shipping details")
+      return
+    }
     setStep(2);
   };
+
+  const handleShippingDataChange = (data) =>{
+    setShippingData(data)
+  }
 
   const handlePaymentSubmit = (data) => {
     setPaymentData(data);
@@ -50,7 +56,7 @@ const CheckOut = () => {
 
   const resetCheckout = () => {
     setStep(1);
-    setShippingData(null);
+    setShippingData({});
     setPaymentData(null);
   };
 
@@ -69,12 +75,11 @@ const CheckOut = () => {
         {step === 1 && (
           <div className="shipping-info">
             {/* <ContactForm/> */}
-            <ShippingForm/> 
+            <ShippingForm onShippingDataChange={handleShippingDataChange}/> 
             <ReviewOrder
               cartItems={cartItems}
               data_product={data_product}
               shippingData={shippingData}
-              contactData={contactData}
               onConfirm={handleOrderConfirm}
             />
           </div>
@@ -87,7 +92,6 @@ const CheckOut = () => {
           {step === 3 && (
             <SuccessMessage
               shippingData={shippingData}
-              contactData={contactData}
               paymentData={paymentData}
               onReset={resetCheckout}
             />
@@ -98,3 +102,6 @@ const CheckOut = () => {
 };
 
 export default CheckOut;
+
+
+

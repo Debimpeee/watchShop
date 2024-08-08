@@ -21,21 +21,11 @@ const ReviewOrder = ({ cartItems, data_product, onConfirm }) => {
 
   return (
     <div className="review-order">
-      {/* <h3>Review Your Order</h3> */}
-      {/* <div className="revShipCont"> */}
-        {/* <div className="shipping-info">
-          <h4>Shipping Information</h4>
-          <p>{shippingData.name}</p>
-          <p>{shippingData.address}</p>
-          <p>{shippingData.city}, {shippingData.state}, {shippingData.zip}</p>
-          <p>{shippingData.country}</p>
-        </div> */}
         <h3>Order Summary</h3>
         <div className="order-summary">
           {data_product.map((product) => (
             cartItems[product.id] > 0 && (
-              <React.Fragment key={product.id}>
-                <div className="order-item">
+                <div key={product.id} className="order-item">
                   <div className="imgName">
                     <img src={product.image} alt={product.name} className='productImage' />
                     <p>{product.name}</p> x 
@@ -45,8 +35,6 @@ const ReviewOrder = ({ cartItems, data_product, onConfirm }) => {
                     <p>{product.price}</p>
                   </div>
                 </div>
-                <div className="divider"></div>
-              </React.Fragment>
               )
             ))}
           <div className="totalh">
@@ -55,8 +43,6 @@ const ReviewOrder = ({ cartItems, data_product, onConfirm }) => {
           </div>
           <button onClick={onConfirm}>Confirm Order</button>
         </div>
-        
-    {/* </div> */}
     </div>
   );
 };
