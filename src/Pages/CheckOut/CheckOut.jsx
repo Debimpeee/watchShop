@@ -7,7 +7,6 @@ import ShippingForm from '../../components/ShippingForm/ShippingForm';
 import ReviewOrder from '../../components/ReviewOrder/ReviewOrder';
 import PaymentForm from '../../components/PaymentForm/PaymentForm';
 import SuccessMessage from '../../components/SuccessMessage/SuccessMessage';
-// import ContactForm from '../../components/ContactForm/ContactForm';
 import { LiaArrowLeftSolid } from 'react-icons/lia';
 
 const CheckOut = () => {
@@ -39,12 +38,6 @@ const CheckOut = () => {
 
   const { subtotal, total } = calculateCartTotal();
 
-  // const handleShippingContinue = (data) => {
-  //   setShippingData(data);
-  //   // setContactData(data);
-  //   setStep(2);
-  // };
-
   const handleOrderConfirm = (data) => {
     setShippingData(data);
     setStep(2);
@@ -58,7 +51,6 @@ const CheckOut = () => {
   const resetCheckout = () => {
     setStep(1);
     setShippingData(null);
-    // setContactData(null);
     setPaymentData(null);
   };
 
@@ -85,19 +77,14 @@ const CheckOut = () => {
               contactData={contactData}
               onConfirm={handleOrderConfirm}
             />
-            {/* <ShippingForm onContinue={handleShippingContinue}/>  */}
           </div>
         )}
-          
-          {/* {step === 2 && (
-            
-          )} */}
         </div>
 
         {/* Payment Form and Success Message */}
         <div className="payment-info">
-          {step === 3 && <PaymentForm total={total} onSubmit={handlePaymentSubmit} />}
-          {step === 4 && (
+          {step === 2 && <PaymentForm total={total} onSubmit={handlePaymentSubmit} />}
+          {step === 3 && (
             <SuccessMessage
               shippingData={shippingData}
               contactData={contactData}

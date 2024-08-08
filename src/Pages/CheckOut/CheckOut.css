@@ -118,6 +118,12 @@ hr{
     }
 }
 
+@media screen and (max-width: 1028px) {
+    .shipping-info{
+        grid-template-columns: 1fr;
+    }
+}
+
 @media screen and (max-width: 1000px) {
     .goBack{
         display: flex;

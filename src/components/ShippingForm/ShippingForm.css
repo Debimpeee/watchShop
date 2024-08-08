@@ -50,12 +50,50 @@
   transform-origin: right;
 }
 
-/* 
-@media screen and (max-width: 1158px) {
+
+@media screen and (max-width: 1028px) {
   .shipping-form{
-    margin: 1rem;
+    margin-right: 3rem;
   }
-} */
+}
+
+@media screen and (max-width: 700px) {
+  .shipping-form{
+    margin: 0 1rem;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .formmGroup{
+    gap: 0.7rem;
+  }
+
+  .shipping-form input{
+    padding: 11px;
+  }
+
+  .shipping-form h3{
+    font-size: 1rem;
+  }
+
+  .firstLast{
+    flex-direction: column;
+  }
+
+  .form-groupp{
+    flex-direction: column;
+  }
+
+  .lastName,
+  .firstName{
+    width: 100%;
+  }
+
+  .city,
+  .state{
+    width: 100%;
+  }
+}
 
 
 

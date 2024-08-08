@@ -26,10 +26,6 @@
     display: flex;
   }
   
-  .shipping-info {
-    margin-bottom: 20px;
-  }
-  
   .order-item {
     display: flex;
     align-items: center;
@@ -69,14 +65,39 @@
     line-height: 2rem;
     padding: 1rem;
   }
-  
 
- @media screen and (max-width: 1158px) {
-    .review-order {
-      margin-left: 1rem;
+  @media screen and (max-width: 700px) {
+    .review-order{
+      margin: 0 1rem;
+    }
+  }
+
+  @media screen and (max-width: 400px) {
+    .review-order button {
+      padding: 11px 0;
     }
 
-    /* .review-order h3{
-      margin: 1rem 0;
-    } */
+    .review-order p{
+      font-size: 0.9rem;
+    }
+
+    .review-order h3{
+      font-size: 1rem;
+      margin: 0.6rem 0;
+    }
+
+    .review-order h4{
+      font-size: 0.9rem;
+    }
+
+    .review-order button{
+      font-size: 0.9rem;
+    }
   }
+
+
+
+
+
+
+
