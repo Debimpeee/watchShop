@@ -1,18 +1,36 @@
-import React, { createContext, useState } from "react";
-import data_product from "../components/Datas/data";
+import React, { createContext, useEffect, useState } from "react";
+import axios from "axios";
 
 export const ShopContext = createContext(null);
 
-const getDefaultCart = () => {
-  let cart = {};
-  for (let i = 0; i < data_product.length; i++) {
-    cart[data_product[i].id] = 0;
-  }
-  return cart;
-};
-
 const ShopContextProvider = (props) => {
-  const [cartItems, setCartItems] = useState(getDefaultCart());
+  const [cartItems, setCartItems] = useState({});
+  const [data_product, setDataProduct] = useState([]);
+
+  const url = "https://api.timbu.cloud/products?organization_id=a063034b7f354a148f4dfb615bd117c6&reverse_sort=false&page=2&size=10&Appid=35EQDHU9265Q1KD&Apikey=059048c0d16b4374a5c62d394a069abd20240721232241987063" 
+
+  useEffect(() =>{
+    const fetchProducts = async () => {
+      try{
+        const response = await axios.get(url)
+        setDataProduct(response.items)
+        initializeCart(response.items)
+      } catch(error){
+        console.error('Error fetching products:', error)
+      }
+    }
+    fetchProducts()
+  }, [])
+
+  // Initialize cart based on fetched products
+  const initializeCart = (products) => {
+    let cart = {}
+    products.forEach(product => {
+      cart[product.id] = 0
+    })
+    setCartItems(cart)
+  }
+
 
   const addToCart = (itemId) => {
     setCartItems((prev) => ({ ...prev, [itemId]: prev[itemId] + 1 }));
