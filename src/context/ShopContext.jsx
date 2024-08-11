@@ -13,8 +13,9 @@ const ShopContextProvider = (props) => {
     const fetchProducts = async () => {
       try{
         const response = await axios.get(url)
-        setDataProduct(response.items)
-        initializeCart(response.items)
+        const products = response.items
+        setDataProduct(products)
+        initializeCart(products)
       } catch(error){
         console.error('Error fetching products:', error)
       }
@@ -25,12 +26,11 @@ const ShopContextProvider = (props) => {
   // Initialize cart based on fetched products
   const initializeCart = (products) => {
     let cart = {}
-    products.forEach(product => {
+    products.forEach((product) => {
       cart[product.id] = 0
     })
     setCartItems(cart)
   }
-
 
   const addToCart = (itemId) => {
     setCartItems((prev) => ({ ...prev, [itemId]: prev[itemId] + 1 }));
@@ -52,12 +52,19 @@ const ShopContextProvider = (props) => {
     removeFromCart(itemId);
   };
 
+    // Convert the price string to a number if needed
+  const parsePrice = (priceString) => {
+    return parseFloat(priceString.replace(/[^\d.-]/g, ""))
+  }
+
   const getTotalCartAmount = () => {
     let totalAmount = 0;
     for (const item in cartItems) {
       if (cartItems[item] > 0) {
         let itemInfo = data_product.find((product) => product.id === Number(item));
-        totalAmount += itemInfo.price * cartItems[item];
+        if(itemInfo){
+          totalAmount += parsePrice(itemInfo.price) * cartItems[item];
+        }
       }
     }
     return totalAmount;
