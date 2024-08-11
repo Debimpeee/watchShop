@@ -1,32 +1,21 @@
 import React, { createContext, useEffect, useState } from "react";
-import axios from "axios";
+import data_product from "../components/Datas/data"
 
 export const ShopContext = createContext(null);
 
 const ShopContextProvider = (props) => {
-  const [cartItems, setCartItems] = useState({});
-  const [data_product, setDataProduct] = useState([]);
-
-  const url = "https://api.timbu.cloud/products?organization_id=a063034b7f354a148f4dfb615bd117c6&reverse_sort=false&page=2&size=10&Appid=35EQDHU9265Q1KD&Apikey=059048c0d16b4374a5c62d394a069abd20240721232241987063" 
-
-  useEffect(() =>{
-    const fetchProducts = async () => {
-      try{
-        const response = await axios.get(url)
-        const products = response.items
-        setDataProduct(products)
-        initializeCart(products)
-      } catch(error){
-        console.error('Error fetching products:', error)
-      }
-    }
-    fetchProducts()
-  }, [])
+  const [cartItems, setCartItems] = useState(() => {
+    let cart = {}
+    data_product.forEach(product => {
+      cart[product.id] = 0
+    })
+    return cart;
+  });
 
   // Initialize cart based on fetched products
-  const initializeCart = (products) => {
+  const initializeCart = () => {
     let cart = {}
-    products.forEach((product) => {
+    data_product.forEach(product => {
       cart[product.id] = 0
     })
     setCartItems(cart)
@@ -52,19 +41,12 @@ const ShopContextProvider = (props) => {
     removeFromCart(itemId);
   };
 
-    // Convert the price string to a number if needed
-  const parsePrice = (priceString) => {
-    return parseFloat(priceString.replace(/[^\d.-]/g, ""))
-  }
-
   const getTotalCartAmount = () => {
     let totalAmount = 0;
     for (const item in cartItems) {
       if (cartItems[item] > 0) {
         let itemInfo = data_product.find((product) => product.id === Number(item));
-        if(itemInfo){
-          totalAmount += parsePrice(itemInfo.price) * cartItems[item];
-        }
+        totalAmount += itemInfo.price * cartItems[item];
       }
     }
     return totalAmount;
