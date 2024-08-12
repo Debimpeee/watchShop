@@ -4,22 +4,24 @@ import data_product from "../components/Datas/data"
 export const ShopContext = createContext(null);
 
 const ShopContextProvider = (props) => {
-  const [cartItems, setCartItems] = useState(() => {
-    let cart = {}
-    data_product.forEach(product => {
-      cart[product.id] = 0
-    })
-    return cart;
-  });
-
-  // Initialize cart based on fetched products
-  const initializeCart = () => {
-    let cart = {}
-    data_product.forEach(product => {
-      cart[product.id] = 0
-    })
-    setCartItems(cart)
+  // Initialize cart from local storage
+  const initializeCartFromLocalStorage = () => {
+    const savedCart = localStorage.getItem('cart')
+    if(savedCart) {
+      return JSON.parse(savedCart)
+    } else {
+      let cart = {}
+      data_product.forEach(product => {
+        cart[product.id] = 0
+      })
+      return cart
+    }
   }
+
+  const [cartItems, setCartItems] = useState(initializeCartFromLocalStorage)
+    useEffect(() => {
+      localStorage.setItem('cart', JSON.stringify(cartItems))
+    }, [cartItems])
 
   const addToCart = (itemId) => {
     setCartItems((prev) => ({ ...prev, [itemId]: prev[itemId] + 1 }));
